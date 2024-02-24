@@ -59,7 +59,7 @@ $(document).ready(function(){
    
    changebox.css("height",changebox.parent().css("font-size") );
    ChangeSize(0);
-   var intervalID = setInterval(Next,2500); // Store interval ID
+   var intervalID = setInterval(Next,3500); // Increase delay between animations
    
    function Next(){
       if( typeof Next.i == 'undefined' ) {
@@ -70,10 +70,10 @@ $(document).ready(function(){
          Next.i = 1;
          changebox.scrollTop(0);
       }
-      changebox.animate({scrollTop: (fs*Next.i)+Next.i*5+3},500);
+      changebox.animate({scrollTop: (fs*Next.i)+Next.i*5+3},800); // Adjust animation duration
       setTimeout(function(){
          ChangeSize(Next.i);
-      },500);
+      },800); // Adjust timeout duration
    }
    
    function ChangeSize(i){
@@ -86,7 +86,7 @@ $(document).ready(function(){
    changebox.hover(function() {
       clearInterval(intervalID);
    }, function() {
-      intervalID = setInterval(Next, 2500);
+      intervalID = setInterval(Next, 3500); // Adjust interval delay
    });
 });
 
